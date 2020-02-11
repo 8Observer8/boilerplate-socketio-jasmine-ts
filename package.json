@@ -1,0 +1,38 @@
+{
+  "name": "boilerplate-socketio-jasmine-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server/Server.js",
+    "test-server": "npm run server-specs-build && node node_modules/jasmine/bin/jasmine.js --config=jasmine.server.json",
+    "test-shared": "npm run shared-specs-build && node node_modules/jasmine/bin/jasmine.js --config=jasmine.shared.json",
+    "Server, shared, and specs": "",
+    "server-build": "tsc -p tsconfigs/server/tsconfig.server.json",
+    "server-specs-build": "tsc -p tsconfigs/specs/server/tsconfig.server.specs.json",
+    "client-specs-build": "tsc -p tsconfigs/specs/client/tsconfig.client.specs.json",
+    "shared-specs-build": "tsc -p tsconfigs/specs/shared/tsconfig.shared.specs.json",
+    "Debug Client": "",
+    "debug-client-build": "tsc -p tsconfigs/client/tsconfig.debug.client.json",
+    "Release Client": "",
+    "release-client-compile": "tsc -p tsconfigs/client/tsconfig.release.client.json",
+    "release-client-bundle": "browserify public/js/client/Program.js -o public/js/client/bundle.js",
+    "release-client-uglify": "uglifyjs public/js/client/bundle.js -o public/js/client/bundle.min.js",
+    "release-client-build": "npm run release-client-compile && npm run release-client-bundle && npm run release-client-uglify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jasmine": "^3.4.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/jasmine": "^3.3.13",
+    "@types/requirejs": "^2.1.31",
+    "@types/socket.io": "^2.1.2",
+    "@types/socket.io-client": "^1.4.32"
+  }
+}

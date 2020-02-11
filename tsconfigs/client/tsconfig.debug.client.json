@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.client.json",
+    "compilerOptions": {
+        "module": "amd",
+        "sourceMap": true,
+        "types": [
+            "requirejs"
+        ]
+    }
+}

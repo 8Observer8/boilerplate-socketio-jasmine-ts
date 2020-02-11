@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Test Client",
+            "url": "http://localhost:8080/specs/SpecRunner.html",
+            "webRoot": "${workspaceFolder}/public"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Test Shared",
+            "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
+            "args": ["--config=jasmine.shared.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Test Server",
+            "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine.js",
+            "args": ["--config=jasmine.server.json"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Server",
+            "program": "${workspaceFolder}/dist/server/Server.js"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Client",
+            "url": "http://localhost:3000/index.html",
+            "webRoot": "${workspaceFolder}/public"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "S/C",
+            "configurations": ["Server", "Client"]
+        }
+    ]
+}

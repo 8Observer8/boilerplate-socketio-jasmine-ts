@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "amd",
+        "sourceMap": true,
+        "outDir": "../../../public/specs/js",
+        "types": [
+            "requirejs",
+            "jasmine"
+        ]
+    },
+    "include": [
+        "../../../specs/client/**/*.ts"
+    ]
+}
